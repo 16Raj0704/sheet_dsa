@@ -42,14 +42,7 @@ export default function Footer({ dark, setDark }) {
 									</span>
 								)}
 							</Badge>{" "}
-							<Link to="/about">
-								<Badge pill variant="light" className="hvr-grow">
-									About{" "}
-									<span role="img" aria-label="face-with-monocole" className="emojiFix">
-										🧐
-									</span>
-								</Badge>
-							</Link>
+							
 						</h4>
 					</div>
 				</div>

@@ -7,7 +7,7 @@ import TopicCard from "./components/TopicCard/TopicCard";
 import Topic from "./components/Topic/Topic";
 import About from "./components/About/About";
 import Footer from "./components/Footer/Footer";
-import ReactGA from "react-ga4";
+
 import "./App.css";
 
 // Creating a theme context
@@ -23,7 +23,7 @@ function App() {
   // useEffect for fetching data from DB on load and init GA
   useEffect(() => {
     localStorage.removeItem("cid");
-    ReactGA.initialize(process.env.REACT_APP_GA_TRACKING_ID);
+    
     getData((QuestionData) => {
       setquestionData(QuestionData);
     });
@@ -116,12 +116,7 @@ function App() {
             <ThemeContext.Provider value={dark}>
               {/* HOME AND ABOUT ROUTE */}
               <Route exact path="/" children={<TopicCard questionData={questionData}></TopicCard>} />
-              <Route
-                path="/about"
-                children={
-                  <About resetData={resetData} exportData={exportData} importData={importData} setQuestionData={setquestionData}></About>
-                }
-              />
+
 
               {/* TOPIC ROUTE */}
               <Route path="/array" children={<Topic data={questionData[0]} updateData={updateData} />} />
